@@ -25,6 +25,7 @@ class ClientSession(ApplicationSession):
         self.log.info("Client session joined {details}", details=details)
 
         # your main app code goes here! eg register procedures, subscribe to topics, etc
+        self.publish(u"Hello World!".encode('utf8'))
 
         self.leave()
 
