@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -it --rm --name crossbar -p 8080:8080 crossbario/crossbar
+

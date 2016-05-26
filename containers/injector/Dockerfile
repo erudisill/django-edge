@@ -16,10 +16,19 @@ RUN         apt-get update && \
 # install Autobahn|Python
 RUN 	pip install -U pip && \
 	pip install -U setuptools && \
+	pip install twisted==16.2.0 && \
 	pip install autobahn==0.14.0
 
-ADD	./src
+# fix InsecurePlatformWarning from pip
+ENV 	PYTHONWARNINGS="ignore:a true SSLContext object"
+RUN	pip install pyopenssl ndg-httpsclient pyasn1
+
+# and finally upgrade service_identity
+RUN	pip install -U service_identity
+
+
+#ADD	./src /src
 
 WORKDIR	./src
 
-CMD ["sh", "/app/run"]
+CMD ["bash", "/src/run"]
