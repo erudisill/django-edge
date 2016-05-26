@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -it --rm --link crossbar -v `pwd`/app:/app bitstorm/dispatch 
