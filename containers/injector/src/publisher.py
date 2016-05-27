@@ -18,7 +18,7 @@ class Component(ApplicationSession):
             print('backend publishing com.bitstorm.pub', counter)
             self.publish(u'com.bitstorm.pub', counter)
             counter += 1
-            yield sleep(1)
+            yield sleep(.1)
 
 
 if __name__ == '__main__':
