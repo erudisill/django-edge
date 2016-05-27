@@ -18,6 +18,7 @@ canvas {
 }
 </style>
 <script src="{% static 'site/js/UnityProgress.js' %}"></script>
+<script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
 {% endblock %}
 
 {% block navbar-left %}
@@ -31,11 +32,12 @@ canvas {
     TOTAL_MEMORY: 268435456,
     errorhandler: null,
     compatibilitycheck: null,
-    dataUrl: "{% static 'site/bitstorm-gl/Release/bitstorm-gl.data' %}",
-    codeUrl: "{% static 'site/bitstorm-gl/Release/bitstorm-gl.js' %}",
-    memUrl: "{% static 'site/bitstorm-gl/Release/bitstorm-gl.mem' %}",
+    dataUrl: "{% static 'site/bitstorm-gl/Development/bitstorm-gl.data' %}",
+    codeUrl: "{% static 'site/bitstorm-gl/Development/bitstorm-gl.js' %}",
+    memUrl: "{% static 'site/bitstorm-gl/Development/bitstorm-gl.mem' %}",
   };
 </script>
-<script src="{% static 'site/bitstorm-gl/Release/UnityLoader.js' %}"></script>
+<script src="{% static 'site/bitstorm-gl/Development/UnityLoader.js' %}"></script>
+<script src="{% static 'site/js/test_autobahn.js' %}"></script>
 {% endblock container %}
 

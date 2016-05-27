@@ -13,11 +13,15 @@ class Component(ApplicationSession):
     @inlineCallbacks
     def onJoin(self, details):
         print("session attached")
-        counter = 0
+        dir = 1
+        pos_y = 0
         while True:
-            print('backend publishing com.bitstorm.pub', counter)
-            self.publish(u'com.bitstorm.pub', counter)
-            counter += 1
+            pos_y += (0.01 * dir)
+            if abs(pos_y) > 1:
+                dir *= -1
+                pos_y += (0.2 * dir) 
+            print('backend publishing com.bitstorm.pub', pos_y)
+            self.publish(u'com.bitstorm.pub', pos_y)
             yield sleep(.1)
 
 
